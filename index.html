@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Base</title>
+    <link rel="stylesheet" href="./static/styles.css">
+</head>
+<body>
+
+    <header>
+        <input type="text" id="search" placeholder="Search...">
+        <div id="admin-panel">⚙️ Admin Panel</div>
+    </header>
+
+    <main>
+        <aside>
+            <ul id="menu">
+                <li onclick="toggleSubtopics('topic1')">Topic 1</li>
+                <ul id="topic1" class="subtopic">
+                    <li>Subtopic 1.1</li>
+                    <li>Subtopic 1.2</li>
+                </ul>
+                <li onclick="toggleSubtopics('topic2')">Topic 2</li>
+                <ul id="topic2" class="subtopic">
+                    <li>Subtopic 2.1</li>
+                    <li>Subtopic 2.2</li>
+                </ul>
+            </ul>
+        </aside>
+        <div class="preview_section">
+            <h1>Welcome to your Knowledge Base</h1>
+            <p>Select a topic from the left to start browsing.</p>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Footer content can be added later -->
+    </footer>
+
+    <script>
+        function toggleSubtopics(topicId) {
+            const subtopics = document.getElementById(topicId);
+            if (subtopics.style.display === "block") {
+                subtopics.style.display = "none";
+            } else {
+                subtopics.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
