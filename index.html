@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knowledge Base</title>
-    <link rel="stylesheet" href="./static/styles.css">
+    <link rel="stylesheet" href="./static/styles/styles.css">
+    <link rel="stylesheet" href="./static/styles/article.css">
 </head>
 <body>
 
     <header>
         <input type="text" id="search" placeholder="Search...">
-        <div id="admin-panel">⚙️ Admin Panel</div>
+        <div id="admin-panel"><a href="./static/templates/admin_panel.html">⚙️ Admin Panel</a></div>
     </header>
 
     <main>
@@ -29,9 +30,29 @@
             </ul>
         </aside>
         <div class="preview_section">
-            <h1>Welcome to your Knowledge Base</h1>
-            <h2>Testing bash script in Vagrant</h2>
-            <p>Select a topic from the left to start browsing.</p>
+            <section class="article_section">
+                <div class="breadcrumps">
+                    <span class="breadcrumps__title"><h2>Ansible > commands</h2></span>
+                    <hr>
+                </div>
+                <div class="article_part">Purpose:
+                    <br>
+                    <span class="purpose">ping servers</span>
+                </div>
+                <div class="article_part">Command:
+                    <br>
+                    <span class="command">ping</span>
+                </div>
+                <div class="article_part">Example:
+                    <br>
+                    <span class="example">ansible all -m ping</span>
+                </div>
+                <div class="article_part">Additional info:
+                <br>
+                    <span class="comments">this will work if you have setup config to know what is the inventory file
+                        if it’s not setup use: ansible -I ./hosts.txt all -m ping</span>
+                </div>
+            </section>
         </div>
     </main>
 
