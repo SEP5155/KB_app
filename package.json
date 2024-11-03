@@ -1,0 +1,15 @@
+{
+  "name": "kb_app",
+  "version": "1.0.0",
+  "description": "Here all knowledge will be stored",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "SEP",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
