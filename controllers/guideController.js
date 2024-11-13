@@ -56,7 +56,7 @@ exports.getGuideById = async(req, res) => {
     }
 }
 
-exports.updateTour = async(req, res) => {
+exports.updateGuide = async(req, res) => {
     try {
         const id = req.params.id;
 
@@ -69,6 +69,27 @@ exports.updateTour = async(req, res) => {
             updatedGuide
         })
 
+    } catch(err) {
+        console.log(err);
+        res.status(400).json({
+            status: 'failure',
+            err
+        })
+    }
+}
+
+exports.deleteGuide = async(req, res) => {
+    console.log('req received');
+    try {
+        const id = req.params.id;
+        console.log('Deleting guide with id:', id);
+
+        await Guide.findByIdAndDelete(id);
+
+        res.status(204).json({
+            status: 'success',
+            data: null
+        })
     } catch(err) {
         console.log(err);
         res.status(400).json({

@@ -11,6 +11,7 @@ router
 router
     .route('/:id')
     .get(guideController.getGuideById)
-    .patch(guideController.updateTour)
-    
+    .patch(guideController.updateGuide)
+    .delete(guideController.deleteGuide)
+
 module.exports = router;

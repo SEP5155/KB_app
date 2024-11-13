@@ -19,7 +19,15 @@ app.use(express.json());
 
 // app.use('api/v1/home', basicRouter);
 app.use('/', basicRouter);
-app.use('/api/v1/guide', guideRouter);
+app.use('/api/v1/guide/', guideRouter);
+
+app.all('*', (req, res, next) => {
+    res.status(404).json({
+        status: 'failed',
+        message: 'Route is not defined'
+    })
+    next();
+})
 
 app.listen(9999, () => {
     console.log('server is listening now')
