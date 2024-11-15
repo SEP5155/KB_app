@@ -14,4 +14,8 @@ router
     .patch(guideController.updateGuide)
     .delete(guideController.deleteGuide)
 
+router
+    .route('/technology/:technology')
+    .get(guideController.getAllGuidesByTechnology)
+
 module.exports = router;

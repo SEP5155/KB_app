@@ -98,3 +98,22 @@ exports.deleteGuide = async(req, res) => {
         })
     }
 }
+
+exports.getAllGuidesByTechnology = async(req, res, next) => {
+    try {
+        const { technology } = req.params;
+
+        const technologies = await Guide.find({ technology });
+        res.status(200).json({
+            status: 'success',
+            qnt_of_entries: technologies.length,
+            data: technologies
+        })
+    } catch(err) {
+        console.log(err);
+        res.status(400).json({
+            status: 'failure',
+            err
+        })
+    }
+}

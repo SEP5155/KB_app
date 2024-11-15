@@ -14,12 +14,11 @@ const guideSchema = mongoose.Schema({
     },
     command: {
         type: String,
-        required: [true, 'Command of command is required'],
+        required: [true, 'Command is required'],
         trim: true
     },
     example: {
         type: String,
-        required: [true, 'Command of command is required'],
         trim: true
     },
     comment: {
