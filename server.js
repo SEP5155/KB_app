@@ -2,6 +2,7 @@ const http = require('http');
 const express = require('express');
 const basicRouter = require('./routes/basicRoute');
 const guideRouter = require('./routes/guideRoute');
+const responseRouter = require('./routes/responseRoute');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const app = express();
@@ -20,6 +21,7 @@ app.use(express.json());
 // app.use('api/v1/home', basicRouter);
 app.use('/', basicRouter);
 app.use('/api/v1/guide/', guideRouter);
+app.use('/api/v1/responses/', responseRouter);
 
 app.all('*', (req, res, next) => {
     res.status(404).json({

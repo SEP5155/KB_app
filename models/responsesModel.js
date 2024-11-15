@@ -9,7 +9,8 @@ const responseSchema = mongoose.Schema({
     topic: {
         type: String,
         required: [true, 'Topic is required'],
-        trim: true
+        trim: true,
+        unique: [true, 'Topic must be unique']
     },
     text: {
         type: String,
