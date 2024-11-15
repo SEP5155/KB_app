@@ -5,7 +5,14 @@ const router = express.Router();
 
 router
     .route('/')
-    .post(responseController.createResponse);
+    .get(responseController.getAllResponses)
+    .post(responseController.createResponse)
+
+router
+    .route('/:id')
+    .get(responseController.getOneResponse)
+    .delete(responseController.deleteResponse)
+    .patch(responseController.updateResponse)
 
 
 module.exports = router;
