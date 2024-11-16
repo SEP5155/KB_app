@@ -88,3 +88,21 @@ exports.updateResponse = async(req, res, next) => {
         })
     }
 }
+
+exports.getAllEntriesBySubcatigorie = async(req, res, next) => {
+    try {
+        const { subCategory } = req.params;
+        const responses = await Response.find({ subCategory });
+
+        res.status(201).json({
+            status: 'success',
+            qnt_of_entries: responses.length,
+            data: responses
+        })
+    } catch(err) {
+        res.status(400).json({
+            status: 'failed',
+            err
+        })
+    }
+}

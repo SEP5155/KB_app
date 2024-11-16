@@ -14,5 +14,9 @@ router
     .delete(responseController.deleteResponse)
     .patch(responseController.updateResponse)
 
+router
+    .route('/category/:subCategory')
+    .get(responseController.getAllEntriesBySubcatigorie)
+
 
 module.exports = router;
