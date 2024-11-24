@@ -31,6 +31,6 @@ app.all('*', (req, res, next) => {
     next();
 })
 
-app.listen(9999, () => {
+app.listen('*', () => {
     console.log('server is listening now')
 })
